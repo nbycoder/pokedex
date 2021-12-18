@@ -1,0 +1,106 @@
+@use 'resets';
+@use 'variables' as *;
+ 
+body {
+    background-color: $mainbg;
+    background: $gradient;
+    color: white;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+}
+.container {
+    padding: 40px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 54px;
+    text-align: center;
+}
+
+.pokedex {
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-gap: 20px;
+	padding-inline-start: 0;
+}
+
+.card {
+    list-style: none;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    border-radius: 20px;
+    text-align: center;
+    color:  $gray;
+    ::after {
+            content: "";
+        display: block;
+        width: 50%;
+        height: 45%;
+        border-radius: 100%;
+        background-color: rgba(255, 255, 255, 0);
+        opacity: 0.7;
+        position: absolute;
+        top: 15%;
+        bottom: 25%;
+    }
+    :hover {
+        animation: bounce 0.5s linear;
+    }
+}
+
+.card-title {
+    text-transform: capitalize;
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.card-subtitle {
+    font-weight: lighter;
+    color: $lightgray;
+    margin-top: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.card-image {
+    height: 180px;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes bounce {
+    20% {
+        transform: translateY(-6px);
+    }
+    40% {
+        transform: translateY(0px);
+    }
+    60% {
+        transform: translateY(-2px);
+    }
+    80% {
+        transform: translateY(-0px);
+    }
+}
+
+//! POKEMON TYPES
+
+.bug { background-color: $bug;}
+.dragon { background-color: $dragon;}
+.electric { background-color: $electric;}
+.fairy { background-color: $fairy;}
+.fighting { background-color: $fighting;}
+.fire { background-color: $fire;}
+.flying { background-color: $flying;}
+.grass { background-color: $grass;}
+.ground { background-color: $ground;}
+.normal { background-color: $normal;}
+.poison { background-color: $poison;}
+.psychic { background-color: $psychic;}
+.rock { background-color: $rock;}
+.steel { background-color: $steel;}
+.water { background-color: $water;}
